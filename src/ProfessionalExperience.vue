@@ -12,7 +12,11 @@ const professionalExperience: Experience[] = [
 </script>
 
 <template>
-  <PortfolioSection title="Experiência Profissional">
+  <PortfolioSection
+    dividerAtEnd
+    :min-height="700"
+    title="Experiência Profissional"
+  >
     <v-hover
       v-for="exp in professionalExperience"
       :key="exp.title"

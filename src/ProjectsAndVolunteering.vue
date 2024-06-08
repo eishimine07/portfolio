@@ -8,7 +8,10 @@ const projectsAndVolunteering: Experience[] = [
 </script>
 
 <template>
-  <PortfolioSection title="Outras Experiências">
+  <PortfolioSection
+    :min-height="200"
+    title="Outras Experiências"
+  >
     <v-hover
       v-for="item in projectsAndVolunteering"
       :key="item.title"

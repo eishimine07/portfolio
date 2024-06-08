@@ -4,9 +4,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 const mouseX = ref<number>(0)
 const mouseY = ref<number>(0)
 const mouseEffect = computed(() => ({
-  // left: `${mouseX.value}px`,
-  // top: `${mouseY.value}px`,
-  background: `radial-gradient(circle at ${mouseX.value}px ${mouseY.value}px, rgba(230, 190, 245, 0.1), rgba(230, 190, 245, 0) 10%)`
+  background: `radial-gradient(circle at ${mouseX.value}px ${mouseY.value}px, rgba(230, 190, 245, 0.2), rgba(230, 190, 245, 0) 15%)`
 }))
 
 const handleMouseMove = (event: MouseEvent) => {

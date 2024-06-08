@@ -9,7 +9,7 @@ import AboutMe from './AboutMe.vue'
 import ProfessionalExperience from './ProfessionalExperience.vue'
 import ProjectsAndVolunteering from './ProjectsAndVolunteering.vue'
 import TecnologiesAndTools from './TecnologiesAndTools.vue'
-import MouseFollower from './components/MouseFollower.vue'
+import MouseEffect from './components/MouseEffect.vue'
 
 type Contact = {
   icon: string
@@ -26,7 +26,7 @@ const { smAndDown } = useDisplay()
 </script>
 
 <template>
-  <MouseFollower />
+  <MouseEffect />
 
   <v-app>
     <v-container class="d-flex flex-column flex-md-row gc-12">
@@ -55,43 +55,13 @@ const { smAndDown } = useDisplay()
       </div>
 
       <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', smAndDown && 'w-100']">
-        <v-lazy
-          :min-height="500"
-          :options="{'threshold':0.4}"
-          transition="scroll-y-transition"
-        >
-          <AboutMe />
-        </v-lazy>
+        <AboutMe />
 
-        <v-divider />
+        <TecnologiesAndTools />
 
-        <v-lazy
-          :min-height="250"
-          :options="{'threshold':0.4}"
-          transition="scroll-y-transition"
-        >
-          <TecnologiesAndTools />
-        </v-lazy>
+        <ProfessionalExperience />
 
-        <v-divider />
-
-        <v-lazy
-          :min-height="700"
-          :options="{'threshold':0.2}"
-          transition="scroll-y-transition"
-        >
-          <ProfessionalExperience />
-        </v-lazy>
-
-        <v-divider />
-
-        <v-lazy
-          :min-height="200"
-          :options="{'threshold':0.3}"
-          transition="scroll-y-transition"
-        >
-          <ProjectsAndVolunteering />
-        </v-lazy>
+        <ProjectsAndVolunteering />
       </div>
     </v-container>
   </v-app>

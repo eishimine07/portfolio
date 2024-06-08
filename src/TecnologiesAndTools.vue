@@ -35,7 +35,11 @@ const tecnologiesAndTools: TecnologiesAndTools[] = [
 </script>
 
 <template>
-  <PortfolioSection title="Habilidades">
+  <PortfolioSection
+    dividerAtEnd
+    :min-height="250"
+    title="Habilidades"
+  >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
     </p>
