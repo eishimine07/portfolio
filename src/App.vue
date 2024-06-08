@@ -3,34 +3,17 @@ import { useDisplay } from 'vuetify'
 import {
   mdiGithub,
   mdiInstagram,
-  mdiLanguageJavascript,
-  mdiLanguageTypescript,
-  mdiLanguageHtml5,
-  mdiLanguageCss3,
-  mdiJquery,
-  mdiVuejs,
-  mdiSass,
-  mdiLanguagePhp,
-  mdiLanguageKotlin,
-  mdiLanguageRubyOnRails,
   mdiLinkedin,
-  mdiGit,
 } from '@mdi/js'
+import AboutMe from './AboutMe.vue'
+import ProfessionalExperience from './ProfessionalExperience.vue'
+import ProjectsAndVolunteering from './ProjectsAndVolunteering.vue'
+import TecnologiesAndTools from './TecnologiesAndTools.vue'
+import MouseFollower from './components/MouseFollower.vue'
 
 type Contact = {
   icon: string
   url: string
-}
-
-type Experience = {
-  title: string
-  period: string
-  description: string
-}
-
-type TecnologiesAndTools = {
-  name: string
-  icon: string
 }
 
 const contacts: Contact[] = [
@@ -39,44 +22,12 @@ const contacts: Contact[] = [
   { icon: mdiLinkedin, url: 'https://www.linkedin.com/in/erick-ishimine-981646160' },
 ]
 
-const sections = [
-  'Sobre Mim',
-  'Habilidades',
-  'Experiência Profissional',
-  'Trabalho Voluntário',
-  'Projetos',
-]
-
-const tecnologiesAndTools: TecnologiesAndTools[] = [
-  { name: 'HTML5', icon: mdiLanguageHtml5 },
-  { name: 'CSS3', icon: mdiLanguageCss3 },
-  { name: 'JavaScript', icon: mdiLanguageJavascript },
-  { name: 'TypeScript', icon: mdiLanguageTypescript },
-  { name: 'jQuery', icon: mdiJquery },
-  { name: 'Vue', icon: mdiVuejs },
-  { name: 'SASS', icon: mdiSass },
-  { name: 'PHP', icon: mdiLanguagePhp },
-  { name: 'Kotlin', icon: mdiLanguageKotlin },
-  { name: 'Ruby on Rails', icon: mdiLanguageRubyOnRails },
-  { name: 'Git', icon: mdiGit },
-]
-
-const professionalExperience: Experience[] = [
-  { title: 'Engenheiro de Software - Infineat', period: 'Janeiro/2024 - Presente', description: 'Participei da análise de requisitos, definição de escopo e estimativa de tempo de desenvolvimento dos projetos.' },
-  { title: 'Desenvolvedor Freelancer - Infineat', period: 'Setembro/2022 - Janeiro/2024', description: 'Planejei e desenvolvi funcionalidades tanto no frontend quanto no backend da aplicação web.' },
-  { title: 'Líder Técnico - Delivery Direto', period: 'Janeiro/2023 - Dezembro/2023', description: 'Participei da análise de requisitos, definição de escopo e estimativa de tempo de desenvolvimento dos projetos.' },
-  { title: 'Desenvolvedor Full Stack - Delivery Direto', period: 'Agosto/2019 - Janeiro/2023' , description: 'Trabalhei no desenvolvimento de diversas funcionalidades no produto. Algumas delas foram: Programa de fidelidade; Agendamento de campanhas de e-mail e push notification; Disponibilização do Pix como meio de pagamento.' },
-  { title: 'Estagiário de Desenvolvimento Web - Delivery Direto', period: 'Agosto/2018 - Agosto/2019' , description: 'Contribuí para o desenvolvimento de novas funcionalidades para os clientes finais e de uso interno.' },
-]
-
-// const volunteering: Experience[] = [
-//   { title: 'Mentor - PoliRetribua', period: 'Março/2022 - Maio/2024', description: 'Procuro ouvir e  tentar compreender as principais dificuldades dos alunos ingressantes nos cursos de engenharia na Escola Politécnica da USP.' },
-// ]
-
 const { smAndDown } = useDisplay()
 </script>
 
 <template>
+  <MouseFollower />
+
   <v-app>
     <v-container class="d-flex flex-column flex-md-row gc-12">
       <div v-if="!smAndDown" class="fixed-column d-flex flex-column py-16 position-sticky">
@@ -104,186 +55,43 @@ const { smAndDown } = useDisplay()
       </div>
 
       <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', smAndDown && 'w-100']">
-        <div class="section">
-          <h2>
-            {{ sections[0] }}
-          </h2>
+        <v-lazy
+          :min-height="500"
+          :options="{'threshold':0.4}"
+          transition="scroll-y-transition"
+        >
+          <AboutMe />
+        </v-lazy>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-          </p>
-
-          <v-divider />
-        </div>
+        <v-divider />
 
         <v-lazy
           :min-height="250"
           :options="{'threshold':0.4}"
           transition="scroll-y-transition"
         >
-          <div class="section">
-            <h2>
-              {{ sections[1] }}
-            </h2>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus
-            </p>
-
-            <div class="d-flex flex-row flex-wrap ga-4">
-              <div
-                v-for="item in tecnologiesAndTools"
-                class="d-flex flex-column text-center"
-              >
-                <v-icon
-                  class="mx-auto"
-                  :icon="item.icon"
-                  size="64"
-                />
-
-                {{  item.name  }}
-              </div>
-            </div>
-
-            <v-divider />
-          </div>
+          <TecnologiesAndTools />
         </v-lazy>
+
+        <v-divider />
 
         <v-lazy
           :min-height="700"
-          :options="{'threshold':0.15}"
+          :options="{'threshold':0.2}"
           transition="scroll-y-transition"
         >
-          <div class="section">
-            <h2>
-              {{ sections[2] }}
-            </h2>
-
-            <v-hover
-              v-for="exp in professionalExperience"
-              :key="exp.title"
-              v-slot="{ isHovering, props }"
-            >
-              <v-card
-                v-bind="props"
-                :subtitle="exp.period"
-                :text="exp.description"
-                :title="exp.title"
-                :variant="isHovering ? 'tonal' : 'text'"
-              />
-            </v-hover>
-
-            <v-divider />
-          </div>
+          <ProfessionalExperience />
         </v-lazy>
 
-        <!-- <h2>
-          {{ sections[3] }}
-        </h2>
+        <v-divider />
 
-        <v-hover
-          v-for="exp in volunteering"
-          :key="exp.title"
-          v-slot="{ isHovering, props }"
+        <v-lazy
+          :min-height="200"
+          :options="{'threshold':0.3}"
+          transition="scroll-y-transition"
         >
-          <v-card
-            v-bind="props"
-            :subtitle="exp.period"
-            :text="exp.description"
-            :title="exp.title"
-            :variant="isHovering ? 'tonal' : 'text'"
-          />
-        </v-hover>
-
-        <v-divider /> -->
-
-        <h2>
-          {{ sections[4] }}
-        </h2>
+          <ProjectsAndVolunteering />
+        </v-lazy>
       </div>
     </v-container>
   </v-app>
