@@ -5,10 +5,10 @@ import {
   mdiInstagram,
   mdiLinkedin,
 } from '@mdi/js'
-import AboutMe from './AboutMe.vue'
-import ProfessionalExperience from './ProfessionalExperience.vue'
-import ProjectsAndVolunteering from './ProjectsAndVolunteering.vue'
-import TecnologiesAndTools from './TecnologiesAndTools.vue'
+import AboutMe from './components/AboutMe.vue'
+import ProfessionalExperience from './components/ProfessionalExperience.vue'
+import MyProjects from './components/MyProjects.vue'
+import TecnologiesAndTools from './components/TecnologiesAndTools.vue'
 import MouseEffect from './components/MouseEffect.vue'
 
 type Contact = {
@@ -31,13 +31,13 @@ const { smAndDown } = useDisplay()
   <v-app>
     <v-container class="d-flex flex-column flex-md-row gc-12">
       <div v-if="!smAndDown" class="fixed-column d-flex flex-column py-16 position-sticky">
-        <h1>
-          Erick Minoru Ishimine
-        </h1>
+        <p class="text-h3 mb-2">
+          Erick Ishimine
+        </p>
 
-        <h2>
+        <p class="text-h5 mb-2">
           Engenheiro de Software
-        </h2>
+        </p>
 
         <div class="d-flex mt-auto gx-2">
           <v-btn
@@ -61,7 +61,7 @@ const { smAndDown } = useDisplay()
 
         <ProfessionalExperience />
 
-        <ProjectsAndVolunteering />
+        <MyProjects />
       </div>
     </v-container>
   </v-app>

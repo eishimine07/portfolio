@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import PortfolioSection from './components/PortfolioSection.vue'
-import Experience from './types/experience'
+import PortfolioSection from './PortfolioSection.vue'
+
+type Experience = {
+  title: string
+  period: string
+  description: string
+}
 
 const projectsAndVolunteering: Experience[] = [
   { title: 'Mentor - PoliRetribua', period: 'Março/2022 - Maio/2024', description: 'Procuro ouvir e  tentar compreender as principais dificuldades dos alunos ingressantes nos cursos de engenharia na Escola Politécnica da USP.' },
@@ -8,10 +13,7 @@ const projectsAndVolunteering: Experience[] = [
 </script>
 
 <template>
-  <PortfolioSection
-    :min-height="200"
-    title="Outras Experiências"
-  >
+  <PortfolioSection title="Projetos">
     <v-hover
       v-for="item in projectsAndVolunteering"
       :key="item.title"

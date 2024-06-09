@@ -12,7 +12,7 @@ import {
   mdiLanguageRubyOnRails,
   mdiGit,
 } from '@mdi/js'
-import PortfolioSection from './components/PortfolioSection.vue'
+import PortfolioSection from './PortfolioSection.vue'
 
 type TecnologiesAndTools = {
   name: string
@@ -37,7 +37,6 @@ const tecnologiesAndTools: TecnologiesAndTools[] = [
 <template>
   <PortfolioSection
     dividerAtEnd
-    :min-height="250"
     title="Habilidades"
   >
     <p>

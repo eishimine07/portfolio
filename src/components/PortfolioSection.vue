@@ -1,37 +1,50 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref } from 'vue'
 
 type PortfolioSectionProps = {
   dividerAtEnd?: boolean
-  minHeight?: number 
   title: string
 }
 
-const props = withDefaults(defineProps<PortfolioSectionProps>(), {
-  minHeight: 48,
-})
+const props = defineProps<PortfolioSectionProps>()
 
-const threshold = computed(() => 48 / props.minHeight)
+const show = ref(false)
+
+const onIntersect = (isIntersecting: boolean) => {
+  if (!show.value && isIntersecting) {
+    show.value = true
+  }
+}
 </script>
 
 <template>
-  <v-lazy
-    :min-height="props.minHeight"
-    :options="{'threshold':threshold}"
-    transition="scroll-y-transition"
+  <div
+    v-intersect="onIntersect"
+    :class="['portfolio-section', show && 'visible']"
   >
-    <div>
-      <h2>
-        {{ props.title }}
-      </h2>
+    <p class="text-h4 mb-4">
+      {{ props.title }}
+    </p>
 
+    <div class="d-flex flex-column ga-2">
       <slot />
-
-      <v-divider
-        v-if="props.dividerAtEnd"
-        class="mt-6"
-        thickness="2"
-      />
     </div>
-  </v-lazy>
+
+    <v-divider
+      v-if="props.dividerAtEnd"
+      class="mt-6"
+      thickness="2"
+    />
+  </div>
 </template>
+
+<style scoped>
+.portfolio-section {
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.2s;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+</style>
