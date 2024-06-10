@@ -22,15 +22,15 @@ const contacts: Contact[] = [
   { icon: mdiLinkedin, url: 'https://www.linkedin.com/in/erick-ishimine-981646160' },
 ]
 
-const { smAndDown } = useDisplay()
+const { mdAndDown } = useDisplay()
 </script>
 
 <template>
   <MouseEffect />
 
   <v-app>
-    <v-container class="d-flex flex-column flex-md-row gc-12">
-      <div v-if="!smAndDown" class="fixed-column d-flex flex-column py-16 position-sticky">
+    <v-container class="d-flex flex-column flex-lg-row gc-12">
+      <div v-if="!mdAndDown" class="fixed-column d-flex flex-column py-16 position-sticky">
         <p class="text-h3 mb-2">
           Erick Ishimine
         </p>
@@ -50,11 +50,11 @@ const { smAndDown } = useDisplay()
         </div>
       </div>
 
-      <div v-if="smAndDown" class="">
+      <div v-if="mdAndDown" class="">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus, at fermentum neque. Proin imperdiet tristique risus, non mollis leo aliquam in. Vestibulum sem ante, facilisis sed arcu et, tincidunt blandit ante. Nullam nec quam vitae lacus fermentum porttitor quis ut turpis. Fusce sed enim vitae dolor laoreet rhoncus quis non lacus. Ut non dignissim metus. Fusce sit amet erat sollicitudin, pharetra risus id, condimentum dolor. Aliquam tincidunt, purus et porttitor cursus, urna urna commodo arcu, vel vehicula nulla velit vel turpis. Duis feugiat posuere est non tempus.
       </div>
 
-      <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', smAndDown && 'w-100']">
+      <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', mdAndDown && 'w-100']">
         <AboutMe />
 
         <TecnologiesAndTools />
@@ -71,10 +71,10 @@ const { smAndDown } = useDisplay()
 .fixed-column {
   height: calc(100vh - 32px);
   top: 16px;
-  width: 43%;
+  width: 35%;
 }
 
 .content {
-  width: 57%;
+  width: 65%;
 }
 </style>
