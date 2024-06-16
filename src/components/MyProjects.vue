@@ -1,31 +1,43 @@
 <script setup lang="ts">
+import CustomCard from './CustomCard.vue';
 import PortfolioSection from './PortfolioSection.vue'
 
-type Experience = {
+type Project = {
   title: string
-  period: string
-  description: string
+  description: string[]
+  image: string
+  url: string
+  tags: string[]
 }
 
-const projectsAndVolunteering: Experience[] = [
-  { title: 'Mentor - PoliRetribua', period: 'Março/2022 - Maio/2024', description: 'Procuro ouvir e  tentar compreender as principais dificuldades dos alunos ingressantes nos cursos de engenharia na Escola Politécnica da USP.' },
+const projects: Project[] = [
+  {
+    title: 'Twinballs',
+    description: [
+      'Twinballs é um jogo de quebra-cabeça divertido, desenvolvido em JavaScript, onde você precisa guiar duas bolas até suas posições específicas em mapas únicos para cada nível. As bolas podem ganhar efeitos especiais que mudam a forma como se movem, adicionando um desafio extra. Cada nível apresenta desafios únicos que exigem raciocínio e estratégia para vencê-los.',
+    ],
+    image: '/twinballs.png',
+    url: 'https://twinballs.vercel.app/',
+    tags: [
+      'JavaScript',
+      'TypeScript',
+      'Vue',
+      'Tailwind',
+    ],
+  },
 ]
 </script>
 
 <template>
   <PortfolioSection title="Projetos">
-    <v-hover
-      v-for="item in projectsAndVolunteering"
-      :key="item.title"
-      v-slot="{ isHovering, props }"
-    >
-      <v-card
-        v-bind="props"
-        :subtitle="item.period"
-        :text="item.description"
-        :title="item.title"
-        :variant="isHovering ? 'tonal' : 'text'"
-      />
-    </v-hover>
+    <CustomCard
+      v-for="proj in projects"
+      :key="proj.title"
+      :title="proj.title"
+      :text="proj.description"
+      :image="proj.image"
+      :url="proj.url"
+      :tags="proj.tags"
+    />
   </PortfolioSection>
 </template>

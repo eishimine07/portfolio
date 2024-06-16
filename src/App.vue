@@ -8,7 +8,7 @@ import {
 import AboutMe from './components/AboutMe.vue'
 import ProfessionalExperience from './components/ProfessionalExperience.vue'
 import MyProjects from './components/MyProjects.vue'
-import TecnologiesAndTools from './components/TecnologiesAndTools.vue'
+import SkillsAndTecnologies from './components/SkillsAndTecnologies.vue'
 import MouseEffect from './components/MouseEffect.vue'
 
 type Contact = {
@@ -57,7 +57,7 @@ const { mdAndDown } = useDisplay()
       <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', mdAndDown && 'w-100']">
         <AboutMe />
 
-        <TecnologiesAndTools />
+        <SkillsAndTecnologies />
 
         <ProfessionalExperience />
 
