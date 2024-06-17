@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useDisplay } from 'vuetify'
 import {
   mdiGithub,
@@ -22,7 +23,8 @@ const contacts: Contact[] = [
   { icon: mdiLinkedin, url: 'https://www.linkedin.com/in/erick-ishimine-981646160' },
 ]
 
-const { mdAndDown } = useDisplay()
+const { mdAndDown, smAndUp } = useDisplay()
+const avatarSize = computed(() => mdAndDown.value ? 120 : 240 )
 </script>
 
 <template>
@@ -30,28 +32,32 @@ const { mdAndDown } = useDisplay()
 
   <v-app>
     <v-container class="d-flex flex-column flex-lg-row gc-12">
-      <div v-if="!mdAndDown" class="fixed-column d-flex flex-column py-16 position-sticky">
-        <p class="text-h3 mb-2">
-          Erick Ishimine
-        </p>
-
-        <p class="text-h5 mb-2">
-          Engenheiro de Software
-        </p>
-
-        <div class="d-flex mt-auto gx-2">
-          <v-btn
-            v-for="contact in contacts"
-            :icon="contact.icon"
-            :href="contact.url"
-            :ripple="false"
-            variant="plain"
-          />
+      <div :class="['d-flex', 'flex-row', 'flex-lg-column', 'gr-4', 'gc-8', !mdAndDown && 'fixed-column position-sticky py-16']">
+        <div v-if="smAndUp" class="d-flex align-center justify-center mx-auto">
+          <v-avatar :size="avatarSize">
+            <v-img src="/me.png" />
+          </v-avatar>
         </div>
-      </div>
+        
+        <div :class="['h-100', 'w-100']">
+          <p class="text-h3 mb-1">
+            Erick Ishimine
+          </p>
+  
+          <p class="text-h5 mb-2">
+            Engenheiro de Software
+          </p>
 
-      <div v-if="mdAndDown" class="">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at lacinia tellus, at fermentum neque. Proin imperdiet tristique risus, non mollis leo aliquam in. Vestibulum sem ante, facilisis sed arcu et, tincidunt blandit ante. Nullam nec quam vitae lacus fermentum porttitor quis ut turpis. Fusce sed enim vitae dolor laoreet rhoncus quis non lacus. Ut non dignissim metus. Fusce sit amet erat sollicitudin, pharetra risus id, condimentum dolor. Aliquam tincidunt, purus et porttitor cursus, urna urna commodo arcu, vel vehicula nulla velit vel turpis. Duis feugiat posuere est non tempus.
+          <div class="d-flex mt-4 gx-2">
+            <v-btn
+              v-for="contact in contacts"
+              :icon="contact.icon"
+              :href="contact.url"
+              :ripple="false"
+              variant="plain"
+            />
+          </div>
+        </div>
       </div>
 
       <div :class="['content', 'py-16', 'd-flex', 'flex-column', 'ga-8', mdAndDown && 'w-100']">
@@ -71,10 +77,15 @@ const { mdAndDown } = useDisplay()
 .fixed-column {
   height: calc(100vh - 32px);
   top: 16px;
-  width: 35%;
+  width: 32%;
 }
 
 .content {
-  width: 65%;
+  width: 68%;
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
 }
 </style>

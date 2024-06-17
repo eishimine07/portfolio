@@ -41,7 +41,7 @@ const { smAndUp } = useDisplay()
           <v-card-text>
             <p
               v-for="p in text"
-              class="mb-1"
+              class="mb-2"
             >
               {{ p }}
             </p>

@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     title: 'Twinballs',
     description: [
-      'Twinballs é um jogo de quebra-cabeça divertido, desenvolvido em JavaScript, onde você precisa guiar duas bolas até suas posições específicas em mapas únicos para cada nível. As bolas podem ganhar efeitos especiais que mudam a forma como se movem, adicionando um desafio extra. Cada nível apresenta desafios únicos que exigem raciocínio e estratégia para vencê-los.',
+      'Twinballs é um divertido jogo de quebra-cabeça desenvolvido em JavaScript, no qual você precisa guiar duas bolas até posições específicas no tabuleiro. As bolas podem adquirir efeitos especiais que alteram a maneira como se movem, adicionando um desafio extra. Cada nível apresenta desafios únicos que exigem raciocínio e estratégia para serem superados.',
     ],
     image: '/twinballs.png',
     url: 'https://twinballs.vercel.app/',
