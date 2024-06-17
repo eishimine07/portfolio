@@ -11,6 +11,7 @@ import ProfessionalExperience from './components/ProfessionalExperience.vue'
 import MyProjects from './components/MyProjects.vue'
 import SkillsAndTecnologies from './components/SkillsAndTecnologies.vue'
 import MouseEffect from './components/MouseEffect.vue'
+import getImageUrl from './helpers/getImageUrl'
 
 type Contact = {
   icon: string
@@ -35,7 +36,7 @@ const avatarSize = computed(() => mdAndDown.value ? 120 : 240 )
       <div :class="['d-flex', 'flex-row', 'flex-lg-column', 'gr-4', 'gc-8', !mdAndDown && 'fixed-column position-sticky py-16']">
         <div v-if="smAndUp" class="d-flex align-center justify-center mx-auto">
           <v-avatar :size="avatarSize">
-            <v-img src="/me.png" />
+            <v-img :src="getImageUrl('me.png')" />
           </v-avatar>
         </div>
         

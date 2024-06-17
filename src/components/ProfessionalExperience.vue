@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import getImageUrl from '../helpers/getImageUrl'
 import PortfolioSection from './PortfolioSection.vue'
 import CustomCard from './CustomCard.vue'
 
@@ -22,7 +23,7 @@ const experiences: Experience[] = [
       'Como desenvolvedor freelancer, trabalhei na correção de bugs e implementei diversas melhorias na plataforma de coleta de dados.',
       'No meu papel atual como engenheiro de software, sou responsável pela parte de tecnologia, ajudando a manter e propondo os próximos passos da equipe. Além disso, trabalho próximo aos outros times da empresa e busco identificar e implementar automatizações nos processos internos.'
     ],
-    image: '/infineat.png',
+    image: getImageUrl('infineat.png'),
     url: 'https://www.infineat.com.br/',
     tags: [
       'JavaScript',
@@ -43,7 +44,7 @@ const experiences: Experience[] = [
       'Como desenvolvedor, trabalhei na implementação de diversas funcionalidades, como programa de fidelidade por pontos, pagamento via Pix, chatbot para WhatsApp, entre outras.',
       'No papel de líder técnico, contribuí com a priorização e planejamento de novos projetos junto ao Product Manager, além de ajudar a manter o time alinhado, motivado e sempre com entregas de qualidade.'
     ],
-    image: '/deliverydireto.png',
+    image: getImageUrl('deliverydireto.png'),
     url: 'https://site.deliverydireto.com.br/',
     tags: [
       'HTML',
@@ -61,7 +62,7 @@ const experiences: Experience[] = [
       'O Projeto PoliRetribua é formado por um grupo de voluntários dedicados a apoiar estudantes em condições de vulnerabilidade socioeconômica da Escola Politécnica da USP, por meio de mentorias e bolsas de estudo, garantindo a permanência deles até a conclusão da graduação e ajudando a evitar a evasão escolar.',
       'Como mentor voluntário, tive a oportunidade de orientar alguns alunos a enfrentar os desafios iniciais do curso, dando dicas sobre como organizar a rotina de estudos e encontrar o como se preparar para as provas. Além disso, procurava mostar a importância de aproveitar ao máximo o ambiente universitário, seja participando de grupos de extensão, conhecendo outros institutos ou praticando esportes.',
     ],
-    image: '/poliretribua.png',
+    image: getImageUrl('poliretribua.png'),
     url: 'https://poliretribua.org.br/',
   },
 ]
